@@ -6,48 +6,53 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@ConfigurationProperties(prefix= "mail")
+@ConfigurationProperties(prefix= "spring.datasource")
 public class DBConfiguration {
-	private String hostname;
-	private String port;
-	private String from;
+	private String driverClassName;
+	private String url;
+	private String userName;
+	private String password;
 	
-	public String getHostname() {
-		return hostname;
+	public String getDriverClassName() {
+		return driverClassName;
 	}
-	public void setHostname(String hostname) {
-		this.hostname = hostname;
+	public void setDriverClassName(String driverClassName) {
+		this.driverClassName = driverClassName;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
-	public String getPort() {
-		return port;
-	}
-	public void setPort(String port) {
-		this.port = port;
-	}
-	public String getFrom() {
-		return from;
-	}
-	public void setFrom(String from) {
-		this.from = from;
-	}
 	@Profile("dev")
 	@Bean
-	public String devDatabaseConnection() {
-		System.out.println("Mail related information for Dev evoirment");
-		System.out.println(hostname);
-		System.out.println(port);
-		System.out.println(from);
+	public String devMailDetails() {
+		System.out.println("Database related information for test evoirment");
+		System.out.println(url);
 		return "Data for dev envoirment";
 	}
 	@Profile("test")
 	@Bean
-	public String testDatabaseConnection() {
-		System.out.println("Mail related information for test evoirment");
-		System.out.println(hostname);
-		System.out.println(port);
-		System.out.println(from);
+	public String testMailDetails() {
+		System.out.println("Database related information for test evoirment");
+		System.out.println(driverClassName);
+		System.out.println(url);
+		System.out.println(userName);
+		System.out.println(password);
 		return "Data for test envoirment";
 	}
-
 }
