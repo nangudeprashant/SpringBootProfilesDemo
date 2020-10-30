@@ -40,9 +40,9 @@ public class MailConfiguration {
 	@Bean
 	public String devDatabaseConnection() {
 		System.out.println("Mail related information for Dev evoirment");
-		System.out.println(hostname);
-		System.out.println(port);
-		System.out.println(from);
+		System.out.println("Host Name: "+hostname);
+		System.out.println("Port: "+port);
+		System.out.println("From: "+from);
 		return "Data for dev envoirment";
 	}
 
@@ -50,9 +50,9 @@ public class MailConfiguration {
 	@Bean
 	public String testDatabaseConnection() {
 		System.out.println("Mail related information for Test evoirment");
-		System.out.println(hostname);
-		System.out.println(port);
-		System.out.println(from);
+		System.out.println("Host Name: "+hostname);
+		System.out.println("Port: "+port);
+		System.out.println("From: "+from);
 		return "Data for test envoirment";
 	}
 

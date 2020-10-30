@@ -41,18 +41,18 @@ public class DBConfiguration {
 	@Profile("dev")
 	@Bean
 	public String devMailDetails() {
-		System.out.println("Database related information for test evoirment");
-		System.out.println(url);
+		System.out.println("Database related information for dev evoirment");
+		System.out.println("URL: "+url);
 		return "Data for dev envoirment";
 	}
 	@Profile("test")
 	@Bean
 	public String testMailDetails() {
 		System.out.println("Database related information for test evoirment");
-		System.out.println(driverClassName);
-		System.out.println(url);
-		System.out.println(userName);
-		System.out.println(password);
+		System.out.println("Driver Class Name: "+driverClassName);
+		System.out.println("URL: "+url);
+		System.out.println("User Name: "+userName);
+		System.out.println("Password: "+password);
 		return "Data for test envoirment";
 	}
 }
